@@ -15,7 +15,7 @@ module "ec2" {
   public_ip_or_not = true
   ami = "ami-073130f74f5ffb161"
   volume_size = "30"
-  key_name = "ash"
+  key_name = "ash2"
   instance_type = "c7i-flex.large"
   security_group_ids = [module.sg.sg_id]
   ec2_names = ["jenkins_server","agent"]
