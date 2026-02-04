@@ -16,7 +16,7 @@ module "ec2" {
   ami = "ami-073130f74f5ffb161"
   volume_size = "30"
   key_name = "ash2"
-  instance_type = ["m7i-flex.large"]
+  instance_type = ["t3.small"]
   security_group_ids = [module.sg.sg_id]
   ec2_names = ["agent"]
 }
