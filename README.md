@@ -99,8 +99,10 @@ Here is the main architecture of the project:
 2- **🖥️ EC2 Module**
 
  📍 Path: modules/ec2
+  
    Creates:
    - EC2 instance in public subnet
+
   Inputs:
 
     Variable	                  Description
@@ -117,8 +119,10 @@ Here is the main architecture of the project:
 3- **🔐 Security Group Module**
 
   📍 Path: modules/security_group
-    Creates:
+   
+   Creates:
     - Security group attached to the VPC
+   
    Inputs:
 
     Variable	        Description
@@ -130,12 +134,13 @@ Here is the main architecture of the project:
    - 🔑 sg_id
      
 4-   **☸️ EKS Module**
-
-   📍 Path: modules/eks
-     Creates:
+  
+  📍 Path: modules/eks
+   
+   Creates:
      - EKS Cluster
      - Managed Node Group
-     Inputs:
+   Inputs:
 
     Variable                       	Description
     eks_subnets_ids	             Control plane subnets
@@ -154,9 +159,11 @@ Here is the main architecture of the project:
 5-  **📦 ECR Module**
 
   📍 Path: modules/ecr
-    Creates:
+  
+   Creates:
     - Amazon ECR repository
-    Inputs:
+   
+   Inputs:
     
     Variable	             Description
     ecr_name	           Repository name
@@ -230,8 +237,13 @@ terraform destroy
 
 # 🧪 Example Deployment Flow
    1️⃣ Create VPC
+   
    2️⃣ Create subnets & IGW
+   
    3️⃣ Create Security Group
+   
    4️⃣ Launch EC2 in public subnet
+   
    5️⃣ Deploy EKS cluster in private subnets
+   
    6️⃣ Create ECR repository
