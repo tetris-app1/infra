@@ -71,12 +71,14 @@ Here is the main architecture of the project:
 1- **🌐 VPC Module**
 
  📍 Path: modules/vpc
+  
    Creates:
    - VPC
    - Public subnet
    - Private subnets
    - Internet Gateway
    - NAT Gateway
+  
   Inputs:
 
     Variable                 	Description
