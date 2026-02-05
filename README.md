@@ -47,3 +47,7 @@ This project deploys a complete AWS infrastructure including VPC, EC2 instance, 
   - 🔒 DynamoDB table (for state locking)
 
 5- EC2 Key Pair (for SSH access)
+
+# 🗂️ Project Structure
+ 
+'''text 
