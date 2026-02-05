@@ -52,4 +52,44 @@ This project deploys a complete AWS infrastructure including VPC, EC2 instance, 
 
 # 🗂️ Project Structure
  
-'''text 
+ 
+```text
+.
+├── main.tf              # Calls all modules
+├── variables.tf         # Variable definitions
+├── terraform.tf         # Backend configuration
+├── terraform.tfvars     # Actual variable values
+└── modules/
+    ├── vpc/
+    ├── ec2/
+    ├── security_group/
+    ├── eks/
+    └── ecr/
+```
+# 🧩 Modules Overview
+1- **🌐 VPC Module**
+
+ 📍 Path: modules/vpc
+   Creates:
+   - VPC
+   - Public subnet
+   - Private subnets
+   - Internet Gateway
+   - NAT Gateway
+  Inputs:
+
+    Variable                 	Description
+    cidr_vpc	                VPC CIDR block
+    cidr_private	            List of private subnet CIDRs
+    public_subnet_cidr      	Public subnet CIDR
+    name_private	            Names of private subnets
+    name_public	             Name of public subnet
+    vpc_name	                VPC name
+    igw	                     Internet Gateway name
+
+ Outputs:
+
+   1- vpc_id
+   2- private_subnet_id
+   3- public_subnet_id
+
