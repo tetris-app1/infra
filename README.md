@@ -54,9 +54,7 @@ Here is the main architecture of the project:
 5- EC2 Key Pair (for SSH access)
 
 # 🗂️ Project Structure
- 
- 
-```text
+ ```text
 .
 ├── main.tf              # Calls all modules
 ├── variables.tf         # Variable definitions
@@ -92,7 +90,117 @@ Here is the main architecture of the project:
 
  Outputs:
 
-   1- vpc_id
-   2- private_subnet_id
-   3- public_subnet_id
+   - vpc_id
+   -  private_subnet_id
+   -   public_subnet_id
+     
+2- **🖥️ EC2 Module**
 
+ 📍 Path: modules/ec2
+   Creates:
+   - EC2 instance in public subnet
+  Inputs:
+
+    Variable	                  Description
+    subnet_id	                  Subnet ID
+    public_ip_or_not	           Assign public IP
+    ami                        	AMI ID
+    volume_size	                Root volume size (GB)
+    key_name	                   SSH key name
+    instance_type	              EC2 instance type
+    security_group_ids	         Security group IDs
+    ec2_names	                  Instance names
+
+
+3- **🔐 Security Group Module**
+
+  📍 Path: modules/security_group
+    Creates:
+    - Security group attached to the VPC
+   Inputs:
+
+    Variable	        Description
+    vpc_id            	VPC ID
+    vpc_cidr	          CIDR for inbound rules
+  
+   Outputs:
+   
+   - 🔑 sg_id
+     
+4-   **☸️ EKS Module**
+
+   📍 Path: modules/eks
+     Creates:
+     - EKS Cluster
+     - Managed Node Group
+     Inputs:
+
+    Variable                       	Description
+    eks_subnets_ids	             Control plane subnets
+    eks_nodes_subnets_ids	       Node group subnets
+    security_group_ids	          Security groups
+    enable_private_access	       Private API access
+    enable_public_access	        Public API access
+    nodes_ec2_type	Node          instance types
+    node_group_name	             Node group name
+    min_nodes	                   Min nodes
+    max_nodes	                   Max nodes
+    desired_nodes	               Desired nodes
+    k8s_version	                 Kubernetes version
+    cluster_name                 Cluster name
+
+5-  **📦 ECR Module**
+
+  📍 Path: modules/ecr
+    Creates:
+    - Amazon ECR repository
+    Inputs:
+    
+    Variable	             Description
+    ecr_name	           Repository name
+    
+   Outputs:
+   - 📎 Repository URI
+
+
+# ⚙️ Variables
+   ```sh
+   variable "region" {}
+   variable "vpc_cidr" {}
+   variable "private_subnets_cidr" {}
+   variable "public_subnets_cidr" {}
+   variable "private_subnets_names" {}
+   variable "public_subnets_names" {}
+   variable "vpc_name" {}
+   variable "igw_name" {}
+   ```
+ **📄 terraform.tfvars Example**
+   ```sh
+   region = "eu-north-1"
+   
+   vpc_cidr = "10.44.0.0/16"
+   
+   private_subnets_cidr = [
+     "10.44.1.0/24",
+     "10.44.2.0/24",
+     "10.44.4.0/24"
+   ]
+   
+   public_subnets_cidr = "10.44.3.0/24"
+   
+   private_subnets_names = [
+     "private-subnet-a",
+     "private-subnet-b",
+     "private-subnet-c"
+   ]
+   
+   public_subnets_names = "public-subnet"
+   
+   vpc_name = "eks-vpc"
+   igw_name = "igw"
+
+   ```
+
+#💾 Terraform Backen
+  Remote backend configuration:
+  
