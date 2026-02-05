@@ -201,6 +201,35 @@ Here is the main architecture of the project:
 
    ```
 
-#💾 Terraform Backen
+# 💾 Terraform Backen
   Remote backend configuration:
-  
+  ```hcl
+   terraform {
+     backend "s3" {
+       bucket         = "terr-statefile-bucket2"
+       key            = "state/file.tfstate"
+       region         = "eu-north-1"
+       dynamodb_table = "lock_table"
+       encrypt        = true
+     }
+   }
+  ```
+3 ▶️ How to Run
+```sh
+terraform init
+terraform plan
+terraform apply
+``` 
+
+# 🧹 To destroy:
+```sh
+terraform destroy
+```
+
+# 🧪 Example Deployment Flow
+   1️⃣ Create VPC
+   2️⃣ Create subnets & IGW
+   3️⃣ Create Security Group
+   4️⃣ Launch EC2 in public subnet
+   5️⃣ Deploy EKS cluster in private subnets
+   6️⃣ Create ECR repository
