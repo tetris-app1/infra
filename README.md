@@ -11,15 +11,15 @@ This project deploys a complete AWS infrastructure including VPC, EC2 instance, 
 
 3. 🧩 Modules Overview
 
-    🌐 VPC
+    - 🌐 VPC
 
-    🖥️ EC2
+    - 🖥️ EC2
 
-    🔐 Security Group
+    - 🔐 Security Group
 
-    ☸️ EKS
+    - ☸️ EKS
 
-    📦 ECR
+    - 📦 ECR
 
 4- ⚙️ Variables
 
@@ -34,16 +34,16 @@ This project deploys a complete AWS infrastructure including VPC, EC2 instance, 
 
   Before running this project, make sure you have:
 
-1- ✅ Terraform v1.5+
+1- Terraform v1.5+
 
-2- ✅ AWS CLI configured (aws configure)
+2- AWS CLI configured (aws configure)
 
-3- ✅ AWS account with IAM permissions
+3- AWS account with IAM permissions
 
-4- ✅ Existing:
+4- Existing:
 
-   🪣 S3 bucket (for state)
+   - 🪣 S3 bucket (for state)
 
-  🔒 DynamoDB table (for state locking)
+  - 🔒 DynamoDB table (for state locking)
 
-5- ✅ EC2 Key Pair (for SSH access)
+5- EC2 Key Pair (for SSH access)
