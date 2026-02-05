@@ -70,9 +70,9 @@ Here is the main architecture of the project:
 # 🧩 Modules Overview
 1- **🌐 VPC Module**
 
- 📍 Path: modules/vpc
+📍 Path: modules/vpc
   
-   Creates:
+  Creates:
    - VPC
    - Public subnet
    - Private subnets
@@ -98,9 +98,9 @@ Here is the main architecture of the project:
      
 2- **🖥️ EC2 Module**
 
- 📍 Path: modules/ec2
+📍 Path: modules/ec2
   
-   Creates:
+  Creates:
    - EC2 instance in public subnet
 
   Inputs:
@@ -118,28 +118,29 @@ Here is the main architecture of the project:
 
 3- **🔐 Security Group Module**
 
-  📍 Path: modules/security_group
+📍 Path: modules/security_group
    
-   Creates:
-    - Security group attached to the VPC
+  Creates:
+   - Security group attached to the VPC
    
-   Inputs:
+  Inputs:
 
     Variable	        Description
     vpc_id            	VPC ID
     vpc_cidr	          CIDR for inbound rules
   
-   Outputs:
+  Outputs:
    
    - 🔑 sg_id
      
 4-   **☸️ EKS Module**
-  
-  📍 Path: modules/eks
+
+ 📍 Path: modules/eks
    
    Creates:
-     - EKS Cluster
-     - Managed Node Group
+    - EKS Cluster
+    - Managed Node Group
+   
    Inputs:
 
     Variable                       	Description
@@ -158,10 +159,10 @@ Here is the main architecture of the project:
 
 5-  **📦 ECR Module**
 
-  📍 Path: modules/ecr
+📍 Path: modules/ecr
   
-   Creates:
-    - Amazon ECR repository
+  Creates:
+   - Amazon ECR repository
    
    Inputs:
     
