@@ -3,7 +3,7 @@
 This project deploys a complete AWS infrastructure including VPC, EC2 instance, Security Groups, EKS cluster, and ECR repository using Terraform. The deployment uses modules for reusability and stores state securely in S3 with DynamoDB for locking.
  Terraform AWS Infrastructure – Detailed Documentation
 
- ![Architecture Diagram](https://drive.google.com/uc?id=1HKmOLXlfygEcMnTrHGCBOmLEUaT1gc0H)
+ ![Architecture Diagram]([https://drive.google.com/uc?id=1HKmOLXlfygEcMnTrHGCBOmLEUaT1gc0H](https://drive.google.com/file/d/1HKmOLXlfygEcMnTrHGCBOmLEUaT1gc0H/view?usp=sharing)
 
 # 📌 Table of Contents
 
