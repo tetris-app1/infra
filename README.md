@@ -138,8 +138,9 @@ Here is the main architecture of the project:
  📍 Path: modules/eks
    
    Creates:
-    - EKS Cluster
-    - Managed Node Group
+   - EKS Cluster
+    
+   - Managed Node Group
    
    Inputs:
 
@@ -211,7 +212,7 @@ Here is the main architecture of the project:
 
    ```
 
-# 💾 Terraform Backen
+# 💾 Terraform Backend
   Remote backend configuration:
   ```hcl
    terraform {
