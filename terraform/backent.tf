@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "terr-statefile-bucket2"
+    bucket = "s3test128"
     key    = "state/file.tfstate"
-    region = "eu-north-1"
+    region = "us-east-1"
     dynamodb_table = "lock_table" 
     encrypt = true
   }
