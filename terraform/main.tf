@@ -34,7 +34,7 @@ module "eks" {
   security_group_ids = [module.sg.sg_id]
   enable_private_access = true
   enable_public_access =  true
-  nodes_ec2_type  = ["t3.small"]
+  nodes_ec2_type  = ["c7i-flex.large"]
   node_group_name = "eks_nodes"
   max_nodes = 5
   min_nodes = 3
