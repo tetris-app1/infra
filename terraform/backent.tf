@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket = "loloashstate"
+    bucket = "terr-statefile-bucket2"
     key    = "state/file.tfstate"
     region = "eu-north-1"
-    dynamodb_table = "locktable" 
+    dynamodb_table = "lock_table" 
     encrypt = true
   }
 }

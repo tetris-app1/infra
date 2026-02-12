@@ -16,9 +16,9 @@ module "ec2" {
   ami = "ami-073130f74f5ffb161"
   volume_size = "30"
   key_name = "ash2"
-  instance_type = "t3.xlarge"
+  instance_type = ["t3.small"]
   security_group_ids = [module.sg.sg_id]
-  ec2_names = ["jenkins","agent"]
+  ec2_names = ["agent"]
 }
 
 module "sg" {
@@ -34,7 +34,7 @@ module "eks" {
   security_group_ids = [module.sg.sg_id]
   enable_private_access = true
   enable_public_access =  true
-  nodes_ec2_type  = ["t3.xlarge"]
+  nodes_ec2_type  = ["c7i-flex.large"]
   node_group_name = "eks_nodes"
   max_nodes = 5
   min_nodes = 3

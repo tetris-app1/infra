@@ -85,10 +85,6 @@ resource "aws_eks_node_group" "example" {
     aws_iam_role_policy_attachment.example_AmazonEKS_CNI_Policy,
     aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryPullOnly,
   ]
-  tags = {
-    Name = "${var.node_group_name}-worker"
-    Role = "eks-worker"
-  }
 }
 
 
