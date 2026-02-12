@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'Please Select The Command To Run { plan , apply, destroy }'
+        description: 'Please Select The Command To Run { plan , apply, destroy, ansible }'
         required: true
         type: choice
         options:
